@@ -10,17 +10,21 @@ def play_music(song):
 
 root = tk.Tk()
 root.title("RPG game")
-root.geometry("1920x1080")
+root.geometry("800x600")
 
 play_music("title")
 
-image = Image.open("view\wallpapers\\title.jpeg")
-image = image.resize((root.winfo_screenwidth(), root.winfo_screenheight()), Image.ANTIALIAS)
-photo = ImageTk.PhotoImage(image)
+bg_image = tk.PhotoImage(file="view\wallpapers\\title.png")
+bg_label = tk.Label(root, image=bg_image)
+bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+= image.resize((root.winfo_screenwidth(), root.winfo_screenheight()), Image.ANTIALIAS)
+# image = Image.open("view\wallpapers\\title.jpeg")
+# image = image.resize((root.winfo_screenwidth(), root.winfo_screenheight()), Image.ANTIALIAS)
+# photo = ImageTk.PhotoImage(image)
 
-# Создание метки с изображением и установка на весь экран
-label = tk.Label(root, image=photo)
-label.pack(fill=tk.BOTH, expand=True)
+# # Создание метки с изображением и установка на весь экран
+# label = tk.Label(root, image=photo)
+# label.pack(fill=tk.BOTH, expand=True)
 
 # Add a button widget
 button = tk.Button(root, text = "Start the game")#, command=on_button_click)
